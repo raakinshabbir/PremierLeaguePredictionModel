@@ -1,0 +1,43 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Premier League Match Simulation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Premier League Match Simulation</h1>
+
+        
+        <!-- Match Simulation Form -->
+        <form method="POST">
+            <div class="form-group">
+                <label for="home_team">Select Home Team:</label>
+                <select name="home_team" id="home_team" required>
+                    <option value="" disabled selected>Select Home Team</option>
+                    {% for team in teams %}
+                        <option value="{{ team }}">{{ team }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="away_team">Select Away Team:</label>
+                <select name="away_team" id="away_team" required>
+                    <option value="" disabled selected>Select Away Team</option>
+                    {% for team in teams %}
+                        <option value="{{ team }}">{{ team }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            
+            <button type="submit">Simulate Match</button>
+        </form>
+    </div>
+</body>
+</html>

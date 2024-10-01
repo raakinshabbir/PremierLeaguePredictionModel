@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Match Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Match Results</h1>
+
+        <h2>{{ home_team }} vs {{ away_team }}</h2>
+        <p>{{ home_team }} Wins: {{ home_wins }}</p>
+        <p>{{ away_team }} Wins: {{ away_wins }}</p>
+        <p>Draws: {{ draws }}</p>
+
+        {% if draws > home_wins and draws > away_wins %}
+            <h3>It's a Draw!</h3>
+        {% elif away_wins > home_wins %}
+            <h3>{{ away_team }} Wins!</h3>
+        {% else %}
+            <h3>{{ home_team }} Wins!</h3>
+        {% endif %}
+
+        <h4>Results of All Simulations:</h4>
+        <ul>
+            {% for result in results %}
+                <li>{{ home_team }} {{ result[0] }} - {{ result[1] }} {{ away_team }}</li>
+            {% endfor %}
+        </ul>
+
+        <a href="{{ url_for('index') }}"><button>Simulate Another Match</button></a>
+    </div>
+</body>
+</html>
