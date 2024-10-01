@@ -7,7 +7,7 @@ from scipy.stats import poisson
 app = Flask(__name__)
 
 # Load and prepare your data
-prem_table = pd.read_csv('C:\\Users\\raaki\\OneDrive\\Documents\\prem\\PremierLeague.csv')
+prem_table = pd.read_csv('PremierLeague.csv')  # or './path/to/PremierLeague.csv' if it's in a subfolder
 prem_table = prem_table.iloc[9880:]
 prem_table = prem_table.drop(prem_table.columns[10:], axis=1)
 prem_table = prem_table.drop(['Time', 'Date', 'Season', 'MatchID', 'MatchWeek'], axis=1)
