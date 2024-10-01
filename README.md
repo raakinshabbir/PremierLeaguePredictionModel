@@ -17,4 +17,12 @@ The Premier League Match Prediction App is a web application built with Flask th
 - **Libraries**: Pandas, NumPy, Scipy
 - **Deployment**: Render
 
+## Data Source
+
+The app uses historical match data sourced from the 'English Premier League' dataset by Saif Uddin on Kaggle. This data has been cleaned and filtered to focus on statistics from the last 5 years. Additionally, the app leverages team rankings from EA's 'EA Sports FC 25' video game to enhance the accuracy of match outcome predictions.
+
+## Usage
+
+The app is hosted on **[Render](https://premierleaguepredictionmodel-2.onrender.com/)**
+
 
