@@ -1,4 +1,4 @@
-# Premier League Match Prediction App
+# Premier League Match Simulator
 
 ## Overview
 
